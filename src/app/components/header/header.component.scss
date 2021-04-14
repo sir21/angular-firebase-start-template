@@ -1,0 +1,19 @@
+.header {
+    height: 5%;
+    min-height: 30px;
+    background-color: gray;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    padding: 0 10%;
+
+    div {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+.cursor {
+    cursor: pointer;
+}

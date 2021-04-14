@@ -1,0 +1,60 @@
+.auth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    .form-div {
+        width: 40%;
+        form {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+    }
+
+    .login {
+        height: 30%;
+    }
+
+    .sign-up {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .action {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .button {
+            display: flex;
+            justify-content: center;
+        }
+
+        .create-new {
+            padding-top: 10px;
+            display: flex;
+            justify-content: center;
+            span {
+                padding-left: 5px;
+            }
+        }
+    }
+}
+
+.blue {
+    color: blue;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+}
+
+.mat-hint {
+    color: red;
+}

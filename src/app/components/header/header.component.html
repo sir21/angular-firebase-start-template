@@ -1,0 +1,4 @@
+<div class="header">
+    <div (click)="gotTo('')" class="cursor">Angular template</div>
+    <div class="username" *ngIf="isLoggedIn()" class="cursor" (click)="gotTo('profile')">{{getUsername()}}</div>
+</div>

@@ -1,0 +1,62 @@
+<div class="auth">
+    <div class="login form-div" *ngIf="login">
+        <form [formGroup]="loginForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="text" formControlName="email">
+                <mat-hint *ngIf="loginForm.controls['email'].errors?.required && loginForm.controls['email'].touched">You must enter email</mat-hint>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password">
+                <mat-hint *ngIf="loginForm.controls['password'].errors?.required && loginForm.controls['password'].touched">You must enter password</mat-hint>
+            </mat-form-field>
+            <div class="action">
+                <div class="error" *ngFor="let error of errors">
+                    {{error}}
+                </div>
+                <div class="button">
+                    <button type="button" mat-raised-button color="primary" (click)="loginAction()">login</button>
+                </div>
+                <div class="create-new">
+                    If you don't have account <span class="blue cursor" (click)="toggleForm()">sign up</span>.
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="sign-up form-div" *ngIf="!login">
+        <form [formGroup]="signUpForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Username</mat-label>
+                <input matInput type="text" formControlName="username">
+                <mat-hint *ngIf="signUpForm.controls['username'].errors?.required && signUpForm.controls['username'].touched">You must enter username</mat-hint>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="text" formControlName="email">
+                <mat-hint *ngIf="signUpForm.controls['email'].errors?.required && signUpForm.controls['email'].touched">You must enter email</mat-hint>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password">
+                <mat-hint *ngIf="signUpForm.controls['password'].errors?.required && signUpForm.controls['password'].touched">You must enter password</mat-hint>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput type="password" formControlName="confirmPassword">
+                <mat-hint *ngIf="signUpForm.controls['confirmPassword'].errors?.required && signUpForm.controls['confirmPassword'].touched">You must enter password again</mat-hint>
+            </mat-form-field>
+            <div class="action">
+                <div class="error" *ngFor="let error of errors">
+                    {{error}}
+                </div>
+                <div class="button">
+                    <button type="button" mat-raised-button color="primary" (click)="signUpAction()">Sign up</button>
+                </div>
+                <div class="create-new">
+                    If you have account <span class="blue cursor" (click)="toggleForm()">login</span>.
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
